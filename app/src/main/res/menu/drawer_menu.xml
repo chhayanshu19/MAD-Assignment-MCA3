@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_add_update_product"
+        android:title="Add / Update Product" />
+    <item
+        android:id="@+id/nav_remove_product"
+        android:title="Remove Product" />
+    <item
+        android:id="@+id/nav_contact_list"
+        android:title="Contact List" />
+    <item
+        android:id="@+id/nav_logout"
+        android:title="Log Out" />
+</menu>
