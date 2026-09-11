@@ -51,9 +51,11 @@ public class HomeActivity extends AppCompatActivity {
                 Intent intent = new Intent(HomeActivity.this, AddProductActivity.class);
                 startActivity(intent);
             } else if (id == R.id.nav_remove_product) {
-                Toast.makeText(this, "Remove Product", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(HomeActivity.this, RemoveProductActivity.class);
+                startActivity(intent);
             } else if (id == R.id.nav_contact_list) {
-                Toast.makeText(this, "Contact List", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(HomeActivity.this, ContactListActivity.class);
+                startActivity(intent);
             } else if (id == R.id.nav_logout) {
                 handleLogout();
             }
