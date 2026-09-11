@@ -25,6 +25,7 @@
         <activity android:name=".home.AddProductActivity"/>
         <activity android:name=".home.RemoveProductActivity"/>
         <activity android:name=".home.ContactListActivity"/>
+        <activity android:name=".home.TodoActivity"/>
     </application>
 
 </manifest>

@@ -37,7 +37,6 @@ public class HomeActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
-        // Set manual button to open the drawer
         toolbar.setNavigationIcon(android.R.drawable.ic_menu_sort_by_size);
         toolbar.setNavigationOnClickListener(v -> {
             drawerLayout.openDrawer(GravityCompat.START);
@@ -55,6 +54,9 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             } else if (id == R.id.nav_contact_list) {
                 Intent intent = new Intent(HomeActivity.this, ContactListActivity.class);
+                startActivity(intent);
+            }else if (id == R.id.nav_todo_list){
+                Intent intent = new Intent(HomeActivity.this, TodoActivity.class);
                 startActivity(intent);
             } else if (id == R.id.nav_logout) {
                 handleLogout();
