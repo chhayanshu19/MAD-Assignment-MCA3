@@ -1,4 +1,4 @@
-package com.example.madassigment.home; // Adjust your package name if needed
+package com.example.madassigment.home;
 
 import android.content.Context;
 import android.content.Intent;
