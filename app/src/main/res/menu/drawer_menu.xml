@@ -10,6 +10,9 @@
         android:id="@+id/nav_contact_list"
         android:title="Contact List" />
     <item
+        android:id="@+id/nav_todo_list"
+        android:title="To-Do List" />
+    <item
         android:id="@+id/nav_logout"
         android:title="Log Out" />
 </menu>

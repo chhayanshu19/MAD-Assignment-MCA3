@@ -22,7 +22,21 @@
             android:layout_height="?attr/actionBarSize"
             android:background="#6200EE"
             app:titleTextColor="#FFFFFF"
-            app:title="Home"/>
+            app:title="Home">
+
+            <!-- The new ToggleButton for Theme Selection -->
+            <ToggleButton
+                android:id="@+id/toggle_theme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+                android:textOff="Light"
+                android:textOn="Dark"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#80FFFFFF" /> <!-- Semi-transparent background -->
+
+        </androidx.appcompat.widget.Toolbar>
 
         <!-- Your Existing Tabs -->
         <com.google.android.material.tabs.TabLayout

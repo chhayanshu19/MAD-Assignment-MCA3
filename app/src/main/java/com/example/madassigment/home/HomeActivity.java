@@ -1,10 +1,9 @@
 package com.example.madassigment.home;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.madassigment.utils.ThemeManager;
 import com.example.madassigment.R;
 import com.example.madassigment.auth.LoginActivity; // Ensure this matches your login activity
 import com.google.android.material.navigation.NavigationView;
@@ -30,6 +30,12 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        ToggleButton toggleTheme = findViewById(R.id.toggle_theme);
+        toggleTheme.setChecked(ThemeManager.isDarkMode(this));
+        toggleTheme.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            ThemeManager.setDarkMode(this, isChecked);
+        });
+
         // --- 1. Setup Toolbar and Drawer ---
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -37,7 +43,6 @@ public class HomeActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
-        // Set manual button to open the drawer
         toolbar.setNavigationIcon(android.R.drawable.ic_menu_sort_by_size);
         toolbar.setNavigationOnClickListener(v -> {
             drawerLayout.openDrawer(GravityCompat.START);
@@ -55,6 +60,9 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             } else if (id == R.id.nav_contact_list) {
                 Intent intent = new Intent(HomeActivity.this, ContactListActivity.class);
+                startActivity(intent);
+            }else if (id == R.id.nav_todo_list){
+                Intent intent = new Intent(HomeActivity.this, TodoActivity.class);
                 startActivity(intent);
             } else if (id == R.id.nav_logout) {
                 handleLogout();
@@ -90,7 +98,7 @@ public class HomeActivity extends AppCompatActivity {
 
     // Handles the Log Out menu option
     private void handleLogout() {
-        SharedPreferences sessionPrefs = getSharedPreferences("UserSession", Context.MODE_PRIVATE);
+        SharedPreferences sessionPrefs = getSharedPreferences("UserSession", MODE_PRIVATE);
         SharedPreferences.Editor editor = sessionPrefs.edit();
         editor.putBoolean("is_logged_in", false);
         editor.apply();

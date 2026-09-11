@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -25,6 +26,7 @@
         <activity android:name=".home.AddProductActivity"/>
         <activity android:name=".home.RemoveProductActivity"/>
         <activity android:name=".home.ContactListActivity"/>
+        <activity android:name=".home.TodoActivity"/>
     </application>
 
 </manifest>
